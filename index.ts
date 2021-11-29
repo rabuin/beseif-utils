@@ -4,10 +4,4 @@
  * Licensed under the MIT license.
  */
 
-'use strict';
-
-import * as Joi from "./utils/joi";
-import * as Dates from "./utils/dates";
-
-exports.joi = Joi;
-exports.dates = Dates;
+export * as Utils from "./utils";
