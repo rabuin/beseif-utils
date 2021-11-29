@@ -6,4 +6,5 @@
 
 'use strict';
 
-export * from "./utils";
+export { Joi } from "./utils/joi";
+export { Dates } from "./utils/dates";
