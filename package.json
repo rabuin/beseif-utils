@@ -1,6 +1,6 @@
 {
   "name": "beseif-utils",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Utility functions for Besief solutions",
   "files": [
     "index.js",
@@ -19,8 +19,6 @@
     "utils"
   ],
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
     "@types/node": "^16.11.10"
   },
   "dependencies": {
