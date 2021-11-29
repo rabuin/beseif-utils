@@ -9,6 +9,5 @@
 import * as Joi from "./utils/joi";
 import * as Dates from "./utils/dates";
 
-module.exports = {
-    Joi, Dates
-}
+exports.joi = Joi;
+exports.dates = Dates;
