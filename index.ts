@@ -6,5 +6,9 @@
 
 'use strict';
 
-export * as Joi from "./utils/joi";
-export * as Dates from "./utils/dates";
+import * as Joi from "./utils/joi";
+import * as Dates from "./utils/dates";
+
+module.exports = {
+    Joi, Dates
+}
