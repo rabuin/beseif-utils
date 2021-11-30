@@ -1,6 +1,6 @@
 {
   "name": "beseif-utils",
-  "version": "1.0.13",
+  "version": "1.2.0",
   "description": "Utility functions for Besief solutions",
   "files": [
     "lib/"
