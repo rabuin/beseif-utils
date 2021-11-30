@@ -1,12 +1,12 @@
 {
   "name": "beseif-utils",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Utility functions for Besief solutions",
   "files": [
     "index.ts",
     "utils/"
   ],
-  "main": "index.ts",
+  "main": "./lib/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
