@@ -2,13 +2,14 @@
   "name": "beseif-utils",
   "version": "1.2.0",
   "description": "Utility functions for Besief solutions",
-  "files": [
-    "lib/"
-  ],
-  "main": "./lib/index.ts",
-  "exports": "./lib/index.ts",
+  "repository": {
+    "type": "git",
+    "directory": "git+https://github.com/rabuin/beseif-utils.git"
+  },
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "author": "Beseif Solutions",
   "license": "MIT",
