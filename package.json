@@ -6,7 +6,7 @@
     "type": "git",
     "directory": "git+https://github.com/rabuin/beseif-utils.git"
   },
-  "main": "index.js",
+  "main": "./lib/index.js",
   "exports": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
