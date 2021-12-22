@@ -42,7 +42,7 @@ export class Joi {
     public static readonly requiredDate = (params: dateParams = {}) => Joi.date(params).required();
 
     public static readonly email = (params: emailParams = {}) => Joi.string(params).email();
-    public static readonly requriedEmail = (params: emailParams = {}) => Joi.email(params).required();
+    public static readonly requiredEmail = (params: emailParams = {}) => Joi.email(params).required();
 
     public static readonly number = (params: numberParams = {}) => {
         let schema = joi.number();

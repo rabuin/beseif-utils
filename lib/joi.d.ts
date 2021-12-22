@@ -31,7 +31,7 @@ export declare class Joi {
     static readonly date: (params?: dateParams) => any;
     static readonly requiredDate: (params?: dateParams) => any;
     static readonly email: (params?: emailParams) => any;
-    static readonly requriedEmail: (params?: emailParams) => any;
+    static readonly requiredEmail: (params?: emailParams) => any;
     static readonly number: (params?: numberParams) => any;
     static readonly requiredNumber: (params?: numberParams) => any;
     static readonly array: (params?: arrayParams) => any;
