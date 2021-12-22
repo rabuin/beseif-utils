@@ -52,6 +52,11 @@ export class Joi {
     }
     public static readonly requiredNumber = (params: numberParams = {}) => Joi.number(params).required();
 
+    public static readonly schemaArray = (itemSchema: any) => {
+        let schema = joi.array();
+        schema = schema.items(itemSchema);
+        return schema;
+    }
     public static readonly array = (params: arrayParams = {}) => {
         let schema = joi.array();
         if (params.min) { schema = schema.min(params.min); }
