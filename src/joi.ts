@@ -73,6 +73,8 @@ export class Joi {
     public static readonly object = (schema?: object) => joi.object(schema);
     public static readonly requiredObject = (schema?: object) => Joi.object(schema).required();
 
+    public static readonly reference = (params: string) => joi.ref(params);
+
     /* VALIDATION */
     public static readonly allowUnknown = { allowUnknown: true };
 
