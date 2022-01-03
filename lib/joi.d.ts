@@ -41,6 +41,7 @@ export declare class Joi {
     static readonly requiredBool: () => any;
     static readonly object: (schema?: object) => any;
     static readonly requiredObject: (schema?: object) => any;
+    static readonly reference: (params: string) => any;
     static readonly allowUnknown: {
         allowUnknown: boolean;
     };
