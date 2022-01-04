@@ -1,8 +1,7 @@
-
 // tslint:disable-next-line: no-var-requires quotemark
 const joi = require('joi').extend(require('@joi/date'));
 
-type stringParams = { min?: number, max?: number, length?: number, valid?: string[] };
+type stringParams = { field?: string, min?: number, max?: number, length?: number, valid?: string[] };
 type dateParams = { format?: string };
 type emailParams = { min?: number, max?: number };
 type numberParams = { min?: number, max?: number };
@@ -27,9 +26,19 @@ export class Joi {
     }
     public static readonly string = (params: stringParams = {}) => {
         let schema = joi.string();
+
         if (params.min) { schema = schema.min(params.min); }
         if (params.max) { schema = schema.max(params.max); }
         if (params.valid) { schema = schema.valid(...params.valid); }
+        schema = schema.messages({
+            "string.base": `{#label} debe ser un texto`,
+            "string.empty": `{#label} no puede estar vacío`,
+            "string.min": `{#label} debe tener al menos {#limit} caracteres`,
+            "string.max": `{#label} debe tener como máximo {#limit} caracteres`,
+            "string.email": `{#label} debe ser un email válido`,
+            "any.required": `{#label} es un campo obligatorio`,
+            "any.invalid": `{#label} no es válido.`,
+        });
         return schema;
     }
     public static readonly requiredString = (params: stringParams = {}) => Joi.string(params).required();
@@ -55,8 +64,14 @@ export class Joi {
     public static readonly schemaArray = (itemSchema: any) => {
         let schema = joi.array();
         schema = schema.items(itemSchema);
+        schema = schema.messages({
+            "any.required": `{#label} es un campo obligatorio`,
+        });
         return schema;
     }
+
+    public static readonly schemaArrayRequired = (itemSchema: any = {}) => Joi.schemaArray(itemSchema).required();
+
     public static readonly array = (params: arrayParams = {}) => {
         let schema = joi.array();
         if (params.min) { schema = schema.min(params.min); }
@@ -64,7 +79,7 @@ export class Joi {
         if (params.items) { schema = schema.items(Joi.string().valid()); }
         return schema;
     }
-    // TODO check array of string valid -- tool.ts
+
     public static readonly requiredArray = (params: arrayParams = {}) => Joi.array(params).required();
 
     public static readonly bool = () => joi.boolean();
@@ -85,6 +100,8 @@ export class Joi {
                 resolve(params);
             } catch (err) {
                 console.error(`Validation error`, params);
+                console.log({ err: err.details[0] });
+
                 reject(err.details[0].message);
             }
         })

@@ -1,4 +1,5 @@
 declare type stringParams = {
+    field?: string;
     min?: number;
     max?: number;
     length?: number;
@@ -35,6 +36,7 @@ export declare class Joi {
     static readonly number: (params?: numberParams) => any;
     static readonly requiredNumber: (params?: numberParams) => any;
     static readonly schemaArray: (itemSchema: any) => any;
+    static readonly schemaArrayRequired: (itemSchema?: any) => any;
     static readonly array: (params?: arrayParams) => any;
     static readonly requiredArray: (params?: arrayParams) => any;
     static readonly bool: () => any;
