@@ -7,7 +7,7 @@ export enum DateFormat {
     Timestamp = ``,
     Joined = `YYYYMMDD`,
     Cron = `ss mm HH DD MM E`,
-    UTCFormat = `YYYY/MM/DDTHH:mm:ssZ`
+    UTCFormat = `YYYY/MM/DDTHH:mm:ss[Z]`
 }
 
 type PeriodUnit = `minutes` | `hours` | `days` | `months` | `years`;
