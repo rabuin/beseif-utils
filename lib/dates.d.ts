@@ -5,7 +5,8 @@ export declare enum DateFormat {
     ReadableFormatWithHours = "DD/MM/YYYY HH:mm",
     Timestamp = "",
     Joined = "YYYYMMDD",
-    Cron = "ss mm HH DD MM E"
+    Cron = "ss mm HH DD MM E",
+    UTCFormat = "YYYY/MM/DDTHH:mm:ssZ"
 }
 declare type PeriodUnit = `minutes` | `hours` | `days` | `months` | `years`;
 declare type Pattern = DateFormat | string;
