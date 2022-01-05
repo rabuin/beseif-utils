@@ -7,8 +7,15 @@ export enum DateFormat {
     Timestamp = ``,
     Joined = `YYYYMMDD`,
     Cron = `ss mm HH DD MM E`,
-    UTCFormatSlash = `YYYY/MM/DDTHH:mm:ss[Z]`,
-    UTCFormatDash = `YYYY-MM-DDTHH:mm:ss[Z]`
+    UTCFormat = `YYYY/MM/DDTHH:mm:ss[Z]`,
+}
+
+export enum DateFormatHyphen {
+    SqlFormat = `YYYY-MM-DD HH:mm:ss`,
+    ReadableFormat = `DD-MM-YYYY`,
+    ReadableFormatWithHours = `DD-MM-YYYY HH:mm`,
+    UTCFormat = `YYYY-MM-DDTHH:mm:ss[Z]`
+
 }
 
 type PeriodUnit = `minutes` | `hours` | `days` | `months` | `years`;

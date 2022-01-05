@@ -6,8 +6,13 @@ export declare enum DateFormat {
     Timestamp = "",
     Joined = "YYYYMMDD",
     Cron = "ss mm HH DD MM E",
-    UTCFormatSlash = "YYYY/MM/DDTHH:mm:ss[Z]",
-    UTCFormatDash = "YYYY-MM-DDTHH:mm:ss[Z]"
+    UTCFormat = "YYYY/MM/DDTHH:mm:ss[Z]"
+}
+export declare enum DateFormatHyphen {
+    SqlFormat = "YYYY-MM-DD HH:mm:ss",
+    ReadableFormat = "DD-MM-YYYY",
+    ReadableFormatWithHours = "DD-MM-YYYY HH:mm",
+    UTCFormat = "YYYY-MM-DDTHH:mm:ss[Z]"
 }
 declare type PeriodUnit = `minutes` | `hours` | `days` | `months` | `years`;
 declare type Pattern = DateFormat | string;
